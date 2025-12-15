@@ -351,7 +351,6 @@ from ansible_collections.community.general.plugins.module_utils.identity.keycloa
 from ansible.module_utils.basic import AnsibleModule
 import copy
 
-
 def main():
     argument_spec = keycloak_argument_spec()
     argument_spec["auth_username"]["aliases"] = []
@@ -435,6 +434,8 @@ def main():
     ]
 
     before_user = kc.get_user_by_username(username=username, realm=realm)
+
+    print(f"Before user: {before_user}")
 
     if before_user is None:
         before_user = {}

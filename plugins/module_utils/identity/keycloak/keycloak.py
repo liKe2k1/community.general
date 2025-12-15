@@ -1002,6 +1002,10 @@ class KeycloakAPI:
             userrep = None
             users = self._request_and_deserialize(users_url, method="GET")
             for user in users:
+                print("#########\n")
+                print(user["username"])
+                print(username)
+                print("#########\n")
                 if user["username"] == username:
                     userrep = user
                     break
